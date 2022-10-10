@@ -4,7 +4,9 @@ hash mutagen-compose || exit 1
 trap 'exit 1' INT QUIT
 
 basedir=$(dirname $0)
+mkdir $basedir/../services
 servicesdir=$(readlink -f $basedir/../services)
+echo $servicesdir
 composefile=$basedir/../docker-compose.yml
 bright='\033[1;37m'
 reset='\033[0m'
